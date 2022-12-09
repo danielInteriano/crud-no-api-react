@@ -1,13 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const initialForm = {
 	name: '',
-	constellation: '',
+	constelacion: '',
 	id: null,
 };
 
 const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
 	const [form, setForm] = useState(initialForm);
+
+	useEffect(() => {
+		if (dataToEdit) {
+			setForm(dataToEdit);
+		} else {
+			setForm(initialForm);
+		}
+	}, [dataToEdit]);
 
 	const handleChange = (e) => {
 		setForm({ ...form, [e.target.name]: e.target.value });
@@ -16,7 +24,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		if (!form.name || !form.constellation) {
+		if (!form.name || !form.constelacion) {
 			alert('Datos incompletos');
 			return;
 		}
@@ -37,7 +45,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
 
 	return (
 		<div>
-			<h3>Agregar</h3>
+			<h3>{dataToEdit ? 'Editar' : 'Agregar'}</h3>
 			<form onSubmit={handleSubmit}>
 				<input
 					type="text"
@@ -48,10 +56,10 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
 				></input>
 				<input
 					type="text"
-					name="constellation"
+					name="constelacion"
 					placeholder="Constelación"
 					onChange={handleChange}
-					value={form.constellation}
+					value={form.constelacion}
 				></input>
 				<input type="submit" value="Enviar"></input>
 				<input type="reset" value="Limpiar" onClick={handleReset}></input>
