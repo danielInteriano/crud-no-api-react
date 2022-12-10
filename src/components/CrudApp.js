@@ -38,13 +38,15 @@ const CrudApp = () => {
 	return (
 		<div>
 			<h2>CRUD APP sin API</h2>
-			<CrudForm
-				createData={createData}
-				updateData={updateData}
-				dataToEdit={dataToEdit}
-				setDataToEdit={setDataToEdit}
-			></CrudForm>
-			<CrudTable data={db} setDataToEdit={setDataToEdit} deleteData={deleteData}></CrudTable>
+			<article className="grid-1-2">
+				<CrudForm
+					createData={createData}
+					updateData={updateData}
+					dataToEdit={dataToEdit}
+					setDataToEdit={setDataToEdit}
+				></CrudForm>
+				<CrudTable data={db} setDataToEdit={setDataToEdit} deleteData={deleteData}></CrudTable>
+			</article>
 		</div>
 	);
 };

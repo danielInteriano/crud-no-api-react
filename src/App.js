@@ -6,8 +6,7 @@ function App() {
 		<div className="App">
 			<header className="App-header">
 				<CrudApp></CrudApp>
-				<br />
-				<br />
+				<hr />
 			</header>
 		</div>
 	);
