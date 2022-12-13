@@ -26,13 +26,13 @@ input[type='text'] {
 button,
 input[type='submit'],
 input[type='reset'] {
-	border: thin solid #444;
+	border: thin solid rgb(207, 197, 197);
 	border-radius: 0.25rem;
 	padding: 0.5rem 1rem;
 	margin: 0 0.5rem 0 0;
 	display: inline-block;
 	background-color: #eee;
-	color: #444;
+	color: rgb(207, 197, 197);
 	font-weight: bold;
 	font-size: 1rem;
 	line-height: 1;

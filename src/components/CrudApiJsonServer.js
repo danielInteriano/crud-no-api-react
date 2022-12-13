@@ -20,7 +20,7 @@ const CrudApiJsonServer = () => {
 			if (!res.err) {
 				setDb(res);
 				setError(null);
-				console.log(res);
+				//console.log(res);
 			} else {
 				setDb(null);
 				setError(res);
