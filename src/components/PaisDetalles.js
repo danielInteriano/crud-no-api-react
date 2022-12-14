@@ -3,7 +3,9 @@ import { Col, Row } from 'react-bootstrap';
 import BanderaPais from './BanderaPais';
 import DatosPais from './DatosPais';
 
-const PaisDetalles = ({ search, pais }) => {
+const PaisDetalles = ({ pais }) => {
+	if (!pais) return <h5>No hay datos que mostrar</h5>;
+	
 	return (
 		<Row>
 			<h4>Detalles del País</h4>

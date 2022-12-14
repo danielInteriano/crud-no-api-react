@@ -2,7 +2,6 @@ import React from 'react';
 import { Col } from 'react-bootstrap';
 
 const DatosPais = ({ name, capital, area, poblacion, continente }) => {
-	//console.log('DatosPais: ', pais);
 	return (
 		<Col>
 			<h4> Principales Datos Geográficos</h4>

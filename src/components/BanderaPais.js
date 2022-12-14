@@ -1,24 +1,19 @@
 import React from 'react';
-import { Card, Stack } from 'react-bootstrap';
+import { Stack } from 'react-bootstrap';
+import CardImagen from './CardImagen';
 
 const BanderaPais = ({ bandera, escudo }) => {
-	//console.log('BanderaPais: ', bandera, escudo);
-
+	let noImagen =
+		'https://static.vecteezy.com/system/resources/previews/005/337/799/non_2x/icon-image-not-found-free-vector.jpg';
 	return (
 		<Stack className="d-flex justify-content-around" direction="horizontal" gap={3}>
-			<Card>
-				<Card.Img variant="top" src={bandera.svg} />
-				<Card.Body>
-					<Card.Title>Bandera Nacional</Card.Title>
-				</Card.Body>
-			</Card>
+			<CardImagen titulo={'Bandera Nacional'} imagen={bandera.svg} />
 
-			<Card>
-				<Card.Img variant="top" src={escudo.svg} />
-				<Card.Body>
-					<Card.Title>Escudo Nacional</Card.Title>
-				</Card.Body>
-			</Card>
+			{escudo.svg ? (
+				<CardImagen titulo={'Escudo Nacional'} imagen={escudo.svg} />
+			) : (
+				<CardImagen titulo={'Imagen no disponible'} imagen={noImagen} />
+			)}
 		</Stack>
 	);
 };

@@ -25,11 +25,9 @@ const CrudBuscadorPaises = () => {
 			api.get(paisUrl).then((res) => {
 				if (!res.err) {
 					setPais(res[0]);
-					console.log('Detalle:', res[0]);
 				} else {
 					setPais(null);
 				}
-				setLoading(false);
 			});
 
 			setLoading(false);
@@ -51,7 +49,7 @@ const CrudBuscadorPaises = () => {
 				<PaisForm handleSearch={handleSearch} />
 			</Row>
 			<Row>
-				<Container>{search && !loading && <PaisDetalles search={search} pais={pais} />}</Container>
+				<Container>{search && !loading && <PaisDetalles pais={pais} />}</Container>
 			</Row>
 		</Container>
 	);
