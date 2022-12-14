@@ -3,11 +3,14 @@ import CrudApi from './components/CrudApi';
 import CrudApiJsonServer from './components/CrudApiJsonServer';
 import CrudApp from './components/CrudApp';
 import CrudBuscadorPaises from './components/CrudBuscadorPaises';
+import SelectAnidados from './components/SelectAnidados';
 
 function App() {
 	return (
 		<div className="App">
 			<header className="App-header">
+				<hr />
+				<SelectAnidados />
 				<hr />
 				<CrudBuscadorPaises />
 				<hr />

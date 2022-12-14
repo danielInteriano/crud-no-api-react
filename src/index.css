@@ -43,6 +43,10 @@ input[type='reset'] {
 	cursor: pointer;
 }
 
+button:hover {
+	background-color: black;
+}
+
 form {
 	margin-bottom: 1rem;
 }
