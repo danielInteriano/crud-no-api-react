@@ -12,8 +12,30 @@ const initialForm = {
 const validationForm = (form) => {
 	let errors = {};
 
+	const regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
+	const regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
+	const regexComments = /^.{1,255}$/;
+
 	if (!form.name.trim()) {
 		errors.name = "El campo 'Nombre' es requerido.";
+	} else if (!regexName.test(form.name.trim())) {
+		errors.name = "El campo 'Nombre' solo acepta letras y espacios en blanco.";
+	}
+
+	if (!form.email.trim()) {
+		errors.email = "El campo 'Email' es requerido.";
+	} else if (!regexEmail.test(form.email.trim())) {
+		errors.email = "El campo 'Email' no es válido.";
+	}
+
+	if (!form.asunto.trim()) {
+		errors.asunto = "El campo 'Asunto' es requerido.";
+	}
+
+	if (!form.comentario.trim()) {
+		errors.comentario = "El campo 'Comentario' es requerido.";
+	} else if (!regexComments.test(form.comentario.trim())) {
+		errors.comentario = "El campo 'Comentario' solo acepta 255 caracteres";
 	}
 
 	return errors;
