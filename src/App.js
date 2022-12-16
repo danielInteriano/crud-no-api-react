@@ -4,12 +4,15 @@ import CrudApi from './components/CrudApi';
 import CrudApiJsonServer from './components/CrudApiJsonServer';
 import CrudApp from './components/CrudApp';
 import CrudBuscadorPaises from './components/CrudBuscadorPaises';
+import Modals from './components/Modals';
 import SelectAnidados from './components/SelectAnidados';
 
 function App() {
 	return (
 		<div className="App">
 			<header className="App-header">
+				<hr />
+				<Modals />
 				<hr />
 				<ContactForm />
 				<hr />
