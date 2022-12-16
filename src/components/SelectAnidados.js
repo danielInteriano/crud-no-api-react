@@ -18,7 +18,7 @@ const SelectAnidados = () => {
 						url={'https://api.escuelajs.co/api/v1/categories'}
 						handleChange={(e) => {
 							setCategorias(e.target.value);
-							console.log(e.target.value);
+							//console.log(e.target.value);
 						}}
 					/>
 					<br />
@@ -28,7 +28,7 @@ const SelectAnidados = () => {
 							url={`https://api.escuelajs.co/api/v1/categories/${categorias}/products`}
 							handleChange={(e) => {
 								setProductos(e.target.value);
-								console.log(e.target.value);
+								//console.log(e.target.value);
 							}}
 						/>
 					)}
@@ -39,7 +39,7 @@ const SelectAnidados = () => {
 							url={`https://api.escuelajs.co/api/v1/products/${productos}`}
 							handleChange={(e) => {
 								setImagenes(e.target.value);
-								console.log(e.target.value);
+								//console.log(e.target.value);
 							}}
 						/>
 					)}

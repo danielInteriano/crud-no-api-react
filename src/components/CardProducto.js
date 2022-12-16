@@ -8,7 +8,6 @@ const CardProducto = ({ producto, imagen }) => {
 	let url = `https://api.escuelajs.co/api/v1/products/${producto}`;
 
 	const { data, error, loading } = useFetch(url);
-	console.log(data);
 
 	if (!data) return null;
 	if (error) {

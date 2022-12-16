@@ -1,4 +1,5 @@
 import './App.css';
+import ContactForm from './components/ContactForm';
 import CrudApi from './components/CrudApi';
 import CrudApiJsonServer from './components/CrudApiJsonServer';
 import CrudApp from './components/CrudApp';
@@ -9,6 +10,8 @@ function App() {
 	return (
 		<div className="App">
 			<header className="App-header">
+				<hr />
+				<ContactForm />
 				<hr />
 				<SelectAnidados />
 				<hr />
