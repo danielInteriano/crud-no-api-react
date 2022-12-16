@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Container, FloatingLabel, Form, Row } from 'react-bootstrap';
 import { useForm } from '../hooks/useForm';
+import Loader from './Loader';
 
 const initialForm = {
 	name: '',
@@ -50,7 +51,7 @@ const ContactForm = () => {
 		<Container>
 			<h2>Validaciones en formularios</h2>
 			<Row lg="2">
-				<Form onChange={handleChange}>
+				<Form onSubmit={handleSubmit}>
 					<Form.Group className="mb-3" controlId="name">
 						<Form.Label>Nombre</Form.Label>
 						<Form.Control
@@ -64,7 +65,6 @@ const ContactForm = () => {
 						/>
 					</Form.Group>
 					{errors.name && <p className="text-danger">{errors.name}</p>}
-
 					<Form.Group className="mb-3" controlId="email">
 						<Form.Label>Email</Form.Label>
 						<Form.Control
@@ -78,7 +78,6 @@ const ContactForm = () => {
 						/>
 					</Form.Group>
 					{errors.email && <p className="text-danger">{errors.email}</p>}
-
 					<Form.Group className="mb-3" controlId="asunto">
 						<Form.Label>Asunto</Form.Label>
 						<Form.Control
@@ -92,7 +91,6 @@ const ContactForm = () => {
 						/>
 					</Form.Group>
 					{errors.asunto && <p className="text-danger">{errors.asunto}</p>}
-
 					<FloatingLabel
 						controlId="floatingTextarea"
 						label="Contenido del mensaje"
@@ -109,11 +107,16 @@ const ContactForm = () => {
 						/>
 					</FloatingLabel>
 					{errors.comentario && <p className="text-danger">{errors.comentario}</p>}
-
 					<Button type="submit" variant="outline-success">
 						Enviar
 					</Button>
 				</Form>
+				{loading && <Loader />}
+				{response && (
+					<div className="alert alert-success" role="alert">
+						¡Sus datos fueron enviados con éxito!
+					</div>
+				)}
 			</Row>
 		</Container>
 	);
