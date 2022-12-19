@@ -1,11 +1,12 @@
-import { Button } from 'react-bootstrap';
 import './Modal.css';
 
-const Modal = ({ children }) => {
+const Modal = ({ children, isOpen, closeModal }) => {
 	return (
-		<article className="modal is-modal">
+		<article className={`modal ${isOpen && 'is-modal'}`} onClick={closeModal}>
 			<div className="modal-container">
-				<Button variant="outline-dark">X</Button>
+				<button className="modal-close" variant="dark" onClick={closeModal}>
+					Cerrar
+				</button>
 				{children}
 			</div>
 		</article>
