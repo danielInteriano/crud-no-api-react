@@ -49,7 +49,7 @@ const ContactForm = () => {
 	);
 	return (
 		<Container>
-			<h2>Validaciones en formularios</h2>
+			<h2>Validaciones</h2>
 			<Row lg="2">
 				<Form onSubmit={handleSubmit}>
 					<Form.Group className="mb-3" controlId="name">
