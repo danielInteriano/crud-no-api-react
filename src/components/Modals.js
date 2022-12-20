@@ -2,10 +2,12 @@ import { Button, Container } from 'react-bootstrap';
 import { useModal } from '../hooks/useModal';
 import ContactForm from './ContactForm';
 import Modal from './Modal';
+import ModalPortal from './ModalPortal';
 
 const Modals = () => {
 	const [isOpenModal1, openModal1, closeModal1] = useModal(false);
 	const [isOpenModalContact, openModalContact, closeModalContact] = useModal(false);
+	const [isOpenModalPortal, openModalPortal, closeModalPortal] = useModal(false);
 
 	return (
 		<Container>
@@ -28,6 +30,13 @@ const Modals = () => {
 			<Modal isOpen={isOpenModalContact} closeModal={closeModalContact}>
 				<ContactForm />
 			</Modal>
+
+			<Button variant="primary" onClick={openModalPortal}>
+				Modal en Portal
+			</Button>
+			<ModalPortal isOpen={isOpenModalPortal} closeModal={closeModalPortal}>
+				<ContactForm />
+			</ModalPortal>
 		</Container>
 	);
 };
